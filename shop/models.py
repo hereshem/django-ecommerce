@@ -21,6 +21,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
+
 class Product(models.Model):
     name = models.CharField(max_length=250)
     slug = AutoSlugField(populate_from='name')
