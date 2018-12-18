@@ -9,3 +9,9 @@ def home(request):
     categories = Category.objects.filter(active=True)
     context = {"products":products, "categories":categories}
     return render(request, "shop/home.html", context)
+
+
+def detail(request, slug):
+    product = Product.objects.get(active=True, slug=slug)
+    context = {"product" : product}
+    return render(request, "shop/detail.html", context)

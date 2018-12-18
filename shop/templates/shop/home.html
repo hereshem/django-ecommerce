@@ -1,4 +1,20 @@
+{% extends "shop/base.html" %}
+{% block title %}Ecommerce Home Page{% endblock  %}
+
+{% block content %}
 <h1>Products are </h1>
 {% for item in products %}
-    {{ item.name }} <br>
+    <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">{{ item.name }}</h4>
+            <div class="card-body">
+              <p class="card-text">{{ item.description }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{% url "shop:detail" item.slug %}" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
 {% endfor %}
+
+{% endblock %}
