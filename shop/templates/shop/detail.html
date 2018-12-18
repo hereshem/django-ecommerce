@@ -1,0 +1,21 @@
+{% extends "shop/base.html" %}
+{% block title %}Ecommerce Home Page{% endblock  %}
+
+{% block content %}
+<div class="col-md-8">
+          <img class="img-fluid" src="/media/{{ product.image }}" alt="">
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">{{ product.name|title }}</h3>
+          <p>{{ product.description }}</p>
+          <h3 class="my-3">Project Details</h3>
+          <ul>
+            <li>Lorem Ipsum</li>
+            <li>Dolor Sit Amet</li>
+            <li>Consectetur</li>
+            <li>Adipiscing Elit</li>
+          </ul>
+        </div>
+
+{% endblock %}

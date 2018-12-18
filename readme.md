@@ -6,25 +6,25 @@
 1. Features Listing
 1. Models Listing
 1. Fields Listing
-2. Create Project (django-admin startproject ecommerce)
-3. Create App (python manage.py startapp shop)
-4. Write Models
-5. Add app in settings.py
-6. Register app in admin
+1. Create Project (django-admin startproject ecommerce)
+1. Create App (python manage.py startapp shop)
+1. Write Models
+1. Add app in settings.py
+1. Register app in admin
 1. Add media information for uploads in settings.py and urls.py 
-7. Create migrations (python manage.py makemigrations shop)
-9. Migrate (python manage.py migrate)
-11. Add meta in models
-12. Create urls for frontend
-13. Write views
-14. Create templates
-1.  Create static folders and files
-16. Bootstrap template setup
-17. Home page and detail page design
-15. Work for signup and login
-18. Review and forms
-19. Other remaining features
-20. Finalizing project
+1. Create migrations (python manage.py makemigrations shop)
+1. Migrate (python manage.py migrate)
+1. Add meta in models
+1. Create urls for frontend
+1. Write views
+1. Create templates
+1. Create static folders and files
+1. Bootstrap template setup
+1. Home page and detail page design
+1. Work for signup and login
+1. Review and forms
+1. Other remaining features
+1. Finalizing project
 
 
 ### Installations

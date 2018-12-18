@@ -2,19 +2,22 @@
 {% block title %}Ecommerce Home Page{% endblock  %}
 
 {% block content %}
-<h1>Products are </h1>
 {% for item in products %}
-    <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">{{ item.name }}</h4>
-            <div class="card-body">
-              <p class="card-text">{{ item.description }}</p>
+    <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="/media/{{ item.image }}" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">{{ item.name|title }}</a>
+                  </h4>
+                  <h5>Rs. {{ item.price|floatformat:"2" }}</h5>
+                  <p class="card-text">{{ item.description }}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div>
             </div>
-            <div class="card-footer">
-              <a href="{% url "shop:detail" item.slug %}" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
 {% endfor %}
 
 {% endblock %}
