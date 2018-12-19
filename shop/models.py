@@ -1,5 +1,6 @@
 from autoslug import AutoSlugField
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 # Create your models here.
@@ -43,7 +44,7 @@ class Product(models.Model):
 class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rate = models.IntegerField(default=10)
+    rate = models.IntegerField(default=10, validators=[MaxValueValidator(10), MinValueValidator(1)])
     review = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
