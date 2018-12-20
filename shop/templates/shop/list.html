@@ -2,6 +2,7 @@
 {% block title %}{{ title }}{% endblock  %}
 
 {% block content %}
+    <div class="row">
 {% for item in products %}
     <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
@@ -21,6 +22,7 @@
     {% empty %}
     <h1> Product not found</h1>
 {% endfor %}
+    </div>
 
 {% endblock %}
 
