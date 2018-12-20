@@ -19,8 +19,12 @@
                 </div>
               </div>
             </div>
-    {% empty %}
-    <h1> Product not found</h1>
+{% empty %}
+    <div class="card w-100">
+    <div class="card-body">
+        <h4>Item not available</h4>
+    </div>
+    </div>
 {% endfor %}
     </div>
 
