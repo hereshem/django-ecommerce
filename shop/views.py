@@ -120,11 +120,16 @@ def cart(request, slug):
 
 
 def mycart(request):
-    sess = request.session.get("data")
+    sess = request.session.get("data", {"items":[]})
     products = Product.objects.filter(active=True, slug__in=sess["items"])
     categories = Category.objects.filter(active=True)
     context = {"products": products,
                "categories": categories,
                "title": "My Cart"}
     return render(request, "shop/list.html", context)
+
+
+def checkout(request):
+    request.session.pop('data', None)
+    return redirect("/")
 
