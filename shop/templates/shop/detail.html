@@ -17,6 +17,9 @@
             <li>Consectetur</li>
             <li>Adipiscing Elit</li>
           </ul>
+            <form action="{% url "shop:cart" product.slug%}">
+                <input type="submit" class="btn btn-danger" value="Add to cart">
+            </form>
         </div>
 </div>
         <hr>

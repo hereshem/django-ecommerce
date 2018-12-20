@@ -38,11 +38,11 @@
 ### eCommerce Project Features Listing
 - Admin adds the category and products
 - Browses all the products and categories
+- User can signup and login
+- User can add review for the product
 - Search all the products using filters
 - Add products in cart
-- User can signup and login
 - User can checkout product
-- User can add review for the product
 
 ### Models and Fields Construction
 1. Categories
