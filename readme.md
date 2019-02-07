@@ -28,8 +28,8 @@
 
 
 ### Installations
-- git clone https://gitlab.com/hereshem/ecommerce-shop
-- cd ecommerce-shop
+- git clone https://github.com/hereshem/django-ecommerce
+- cd django-ecommerce
 - pip install -r requirements.txt
 - python manage.py migrate
 - python manage.py runserver
