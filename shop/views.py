@@ -9,6 +9,8 @@ from shop.models import Product, Category
 
 
 def home(request):
+    if request.META['HTTP_HOST'] != "ecommerce.hem.xyz.np":
+        return redirect("http://ecommerce.hem.xyz.np")
     products = Product.objects.filter(active=True)
     categories = Category.objects.filter(active=True)
     context = {"products": products, "categories": categories}

@@ -25,7 +25,7 @@ SECRET_KEY = '90fpm+=so5b+g7!nmy-66ii^hze-hab=un&v%61-7%$4a!l70)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "ecommerce.hem.info.np", "ecommerce.hem.xyz.np"]
 
 
 # Application definition
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kathmandu'
 
 USE_I18N = True
 
