@@ -25,7 +25,7 @@ SECRET_KEY = '90fpm+=so5b+g7!nmy-66ii^hze-hab=un&v%61-7%$4a!l70)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "ecommerce.hem.info.np", "ecommerce.hem.xyz.np"]
+ALLOWED_HOSTS = ["localhost", "ecommerce.hem.info.np", "ecommerce.hem.xyz.np", "127.0.0.1"]
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
-    'bootstrap4'
+    'bootstrap4',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

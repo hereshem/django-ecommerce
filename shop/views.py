@@ -1,16 +1,21 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.db.models import Q
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from shop.forms import ReviewForm, SignupForm, SigninForm
 from shop.models import Product, Category
+from shop.serializer import ProductSerializer
 
 
 def home(request):
-    if request.META['HTTP_HOST'] != "ecommerce.hem.xyz.np":
-        return redirect("http://ecommerce.hem.xyz.np")
+    # if request.META['HTTP_HOST'] != "ecommerce.hem.xyz.np":
+    #     return redirect("http://ecommerce.hem.xyz.np")
     products = Product.objects.filter(active=True)
     categories = Category.objects.filter(active=True)
     context = {"products": products, "categories": categories}
@@ -65,7 +70,7 @@ def signup(request):
             user = form.save(commit=False)
             user.save()
             messages.success(request, "User saved")
-            redirect("/")
+            return redirect("shop:signin")
         else:
             messages.error(request, "Error in form")
     else:
@@ -135,3 +140,9 @@ def checkout(request):
     request.session.pop('data', None)
     return redirect("/")
 
+@api_view(['GET'])
+def api_products(request):
+    query = request.GET.get("q", "")
+    products = Product.objects.filter(Q(name__contains=query) | Q(description__contains=query))
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)

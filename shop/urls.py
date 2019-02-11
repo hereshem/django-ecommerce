@@ -18,4 +18,6 @@ urlpatterns = [
     path('<slug>/', views.detail, name="detail"),
 
     path('categories/<slug>/', views.categories, name="categories"),
+    path('categories/<slug>/', views.categories, name="categories"),
+    path('api/products/', views.api_products, name="api_products"),
 ]
