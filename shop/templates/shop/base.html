@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %}Shop Homepage - Start Bootstrap Template{% endblock %}</title>
+    <title>{% block title %}Shop Homepage - Bootstrap Template{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "shop/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home
+              <a class="nav-link" href="{% url "shop:home" %}">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -39,19 +39,19 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/api/products">APIs</a>
+              <a class="nav-link" href="{% url "shop:api_products" %}">APIs</a>
             </li>
               <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {% if user.is_authenticated %}
-                            <a class="dropdown-item" href="/signout/">Sign Out</a>
+                            <a class="dropdown-item" href="{% url "shop:signout" %}">Sign Out</a>
                         {% else %}
-                            <a class="dropdown-item" href="/signin/">Sign In</a>
-                            <a class="dropdown-item" href="/signup/">Signup</a>
+                            <a class="dropdown-item" href="{% url "shop:signin" %}">Sign In</a>
+                            <a class="dropdown-item" href="{% url "shop:signup" %}">Signup</a>
                         {% endif %}
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/checkout/">Checkout</a>
+                            <a class="dropdown-item" href="{% url "shop:checkout" %}">Checkout</a>
 
                     </div>
                 </li>
@@ -76,7 +76,7 @@
           <h1 class="my-4">Ecommerce Shop</h1>
           <div class="list-group">
               {% for c in categories %}
-                  <a href="/categories/{{ c.slug }}" class="list-group-item">{{ c.name }}</a>
+                  <a href="{% url "shop:categories" c.slug %}" class="list-group-item">{{ c.name }}</a>
               {% endfor %}
 {#            <a href="#" class="list-group-item">Category 1</a>#}
 {#            <a href="#" class="list-group-item">Category 2</a>#}
